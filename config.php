@@ -3,8 +3,8 @@
 // sinu andmed
 $db_server = 'localhost';
 $db_andmebaas = 'cr';
-$db_kasutaja = 'markusk';
-$db_salasona = 'parool';
+$db_kasutaja = 'aare';
+$db_salasona = 'aare';
 
 // ühendus andmebaasiga
 $yhendus = mysqli_connect($db_server, $db_kasutaja, $db_salasona, $db_andmebaas);
@@ -13,3 +13,5 @@ $yhendus = mysqli_connect($db_server, $db_kasutaja, $db_salasona, $db_andmebaas)
 if (!$yhendus) {
     die('Ei saa ühendust andmebaasiga');
 }
+
+?>
