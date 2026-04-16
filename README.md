@@ -3,9 +3,9 @@
 
 ## Keskkond
 
-* Virtuaalkeskkond: Proxmox
+* Virtuaalkeskkond: VIRTUALBOX
 * Operatsioonisüsteem: Ubuntu Server
-* Ligipääs: SSH (Windows masinast)
+* Ligipääs: SSH
 * Andmebaasiserver: MySQL
 
 ---
@@ -113,7 +113,7 @@ gh auth login
 Klooni oma GitHub repository:
 
 ```bash
-git clone https://github.com/Feitseit/cr.git
+git clone https://github.com/Aare-Kobar/CR.git
 cd CR
 ```
 
