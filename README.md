@@ -113,7 +113,7 @@ gh auth login
 Klooni oma GitHub repository:
 
 ```bash
-git clone https://github.com/Aare-Kobar/CR.git
+git clone https://github.com/Feitseit/cr.git
 cd CR
 ```
 
