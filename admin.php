@@ -1,4 +1,5 @@
 <h1>admin</h1>
+<a href="lisa.php">+ Lisa auto</a><br>
 
 <table border="1">
     <tr>
@@ -19,7 +20,7 @@
 
     include("config.php");
 
-    $paring = "SELECT * FROM cars LIMIT 8";
+    $paring = "SELECT * FROM cars ORDER BY id DESC LIMIT 8";
     $valjund = mysqli_query($yhendus, $paring); // mysql käsu saatmine andmebaasile
 
     while($rida = mysqli_fetch_assoc($valjund)){
