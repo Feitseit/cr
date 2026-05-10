@@ -3,8 +3,8 @@
 // sinu andmed
 $db_server = 'db';
 $db_andmebaas = 'cr';
-$db_kasutaja = 'aare';
-$db_salasona = 'aare';
+$db_kasutaja = 'markus';
+$db_salasona = 'markus';
 
 define('ADMIN_USERNAME', 'admin');
 define('ADMIN_PASSWORD_HASH', '$2b$12$0FTDh.QuAUZACF4xGfgkauYlIsXbXXh7oJf.WrwRerGhAGuy89ooS');
