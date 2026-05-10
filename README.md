@@ -1,101 +1,102 @@
-Multimeedia iseseisev töö 3
-MySQL andmebaasiserveri paigaldus ja seadistamine
-Töökeskkond
-Virtuaalmasin: VirtualBox
-Operatsioonisüsteem: Ubuntu Server
-Ligipääs serverile: SSH
-Andmebaasisüsteem: MySQL
-1. Süsteemi uuendamine
+# MySQL andmebaasiserveri paigaldus ja seadistamine
 
-Kõigepealt uuendasin süsteemi paketid:
+## Töökeskkond
 
-sudo apt update
-sudo apt upgrade -y
-2. MySQL serveri paigaldamine
+- Virtuaalmasin: VirtualBox  
+- Operatsioonisüsteem: Ubuntu Server  
+- Ligipääs serverile: SSH  
+- Andmebaasisüsteem: MySQL  
 
-Seejärel paigaldasin MySQL serveri:
+---
 
-sudo apt install mysql-server -y
-3. Teenuse kontrollimine
+## 1. Süsteemi uuendamine
 
-Kontrollisin, kas MySQL teenus töötab:
+sudo apt update  
+sudo apt upgrade -y  
 
-sudo systemctl status mysql.service
+---
 
-Veendusin ka, et teenus käivitub automaatselt:
+## 2. MySQL serveri paigaldamine
 
-systemctl is-enabled mysql
+sudo apt install mysql-server -y  
 
-Tulemus pidi olema: enabled
+---
 
-4. MySQL turvaseadistamine
+## 3. Teenuse kontrollimine
 
-Turvalisuse parandamiseks käivitasin:
+sudo systemctl status mysql.service  
+systemctl is-enabled mysql  
 
-sudo mysql_secure_installation
+Oodatud tulemus: enabled  
 
-Seadistuse käigus tegin järgmised valikud:
+---
 
-eemaldasin anonüümsed kasutajad
-kustutasin testandmebaasi
-keelasin root kasutaja kaugühenduse
-seadistasin autentimise kontrolli
-5. Kasutajate autentimise kontroll
+## 4. MySQL turvaseadistamine
 
-Kontrollisin kasutajate autentimismeetodeid:
+sudo mysql_secure_installation  
 
-sudo mysql -e "SELECT user, host, plugin FROM mysql.user;"
+Tehtud sammud:
+- eemaldatud anonüümsed kasutajad  
+- kustutatud testandmebaas  
+- keelatud root kaugühendus  
+- seadistatud autentimine  
 
-Tulemus näitas, et root kasutab auth_socket (või unix_socket) autentimist, mis tähendab, et parooliga sisselogimine ei ole vaikimisi lubatud.
+---
 
-6. MySQL konfiguratsiooni muutmine
+## 5. Kasutajate kontroll
 
-Avasin konfiguratsioonifaili:
+sudo mysql -e "SELECT user, host, plugin FROM mysql.user;"  
 
-sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+Tulemus: root kasutab auth_socket / unix_socket autentimist  
 
-Kontrollisin, et server kuulab ainult lokaalseid ühendusi:
+---
 
-bind-address = 127.0.0.1
+## 6. Konfiguratsioon
 
-Lisasin ka turvaseaded:
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf  
 
-local-infile = 0
-skip-name-resolve
+Seaded:
 
-Seejärel taaskäivitasin teenuse:
+bind-address = 127.0.0.1  
+local-infile = 0  
+skip-name-resolve  
 
-sudo systemctl restart mysql
-7. Andmebaasi loomine
+Taaskäivitus:
 
-Logisin MySQL keskkonda ja lõin andmebaasi:
+sudo systemctl restart mysql  
 
-sudo mysql
-CREATE DATABASE andmebaas;
-8. Andmete import GitHubist
+---
 
-Autentisin GitHub CLI abil:
+## 7. Andmebaasi loomine
 
-gh auth login
+sudo mysql  
 
-Kloonisin repositooriumi:
+CREATE DATABASE andmebaas;  
 
-git clone https://github.com/Feitseit/cr.git
-cd CR
+---
 
-Importisin SQL faili andmebaasi:
+## 8. GitHubist andmete import
 
-sudo mysql andmebaas < cars.sql
-9. Kontroll ja verifitseerimine
+gh auth login  
 
-Kontrollisin, kas tabelid imporditi edukalt:
+git clone https://github.com/Feitseit/cr.git  
+cd CR  
 
-sudo mysql -e "USE andmebaas; SHOW TABLES;"
+sudo mysql andmebaas < cars.sql  
 
-Kontrollisin MySQL porti:
+---
 
-sudo ss -tulnp | grep 3306
+## 9. Kontroll
 
-Kontrollisin bind-address väärtust:
+sudo mysql -e "USE andmebaas; SHOW TABLES;"  
 
-sudo mysql -e "SHOW VARIABLES LIKE 'bind_address';"
+sudo ss -tulnp | grep 3306  
+
+sudo mysql -e "SHOW VARIABLES LIKE 'bind_address';"  
+
+---
+
+## Kokkuvõte
+
+Paigaldati ja seadistati MySQL server Ubuntu Serveris.  
+Tehti turvaseaded, imporditi andmed GitHubist ning kontrolliti süsteemi tööd. Server töötab lokaalselt ja turvaliselt.
