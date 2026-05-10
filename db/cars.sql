@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Loomise aeg: Märts 12, 2026 kell 10:55 EL
--- Serveri versioon: 10.4.32-MariaDB
--- PHP versioon: 8.0.30
 
 USE `cr`;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,15 +11,15 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Andmebaas: `cr`
---
+
+ Andmebaas: `cr`
+
 
 -- --------------------------------------------------------
 
---
+
 -- Tabeli struktuur tabelile `cars`
---
+
 
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
