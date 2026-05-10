@@ -1,5 +1,4 @@
 <?php
-// ***protseduuriline***
 // sinu andmed
 $db_server = 'db';
 $db_andmebaas = 'cr';
