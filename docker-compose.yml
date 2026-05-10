@@ -14,8 +14,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: cr
-      MYSQL_USER: aare
-      MYSQL_PASSWORD: aare
+      MYSQL_USER: markus
+      MYSQL_PASSWORD: markus
     volumes:
       - ./db_data:/var/lib/mysql
       - ./db/cars.sql:/docker-entrypoint-initdb.d/cars.sql
