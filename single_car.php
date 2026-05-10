@@ -53,8 +53,8 @@
 <?php
     $paring = "SELECT * FROM cars WHERE id=1";
     $valjund = mysqli_query($yhendus, $paring); // mysql käsu saatmine andmebaasile
-
     $rida = mysqli_fetch_assoc($valjund);
+    // var_dump($rida)
 ?>
 
 

@@ -23,21 +23,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="admin.php">Admin</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -52,16 +38,13 @@
 <?php
 $bg = "https://loremflickr.com/1200/400/1194";
 ?>
-
-<div class="text-white text-center py-5"
+<div class="text-white text-center mb-5 py-5"
      style="background-image: url('<?= $bg ?>');
             background-size: cover;
             background-position: center;">
 
   <div class="container">
-    <h1 class="fw-bold">Leia oma unistuste auto</h1>
-    <p class="lead">Kiire ja mugav autorent Eestis</p>
-    <a href="index.php" class="btn btn-warning btn-lg">Vaata autosid</a>
+    <h1 class="fw-bold">Kiire ja mugav autorent Eestis</h1>
   </div>
 </div>
 
